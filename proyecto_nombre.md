@@ -1,5 +1,8 @@
 # Proyecto de Estudio!
-    
+### FORMATO PDF DEL CASO DE ESTUDIO
+
+Acceso al documento [PDF](doc/proyecto_estudio_BaseDatos1.pdf) del diccionario de datos.
+
 **Estructura del documento principal:**
 PROYECTO SOBRE LA GESTION DE OBRAS DEL Instituto Autárquico de Planeamiento y Vivienda (IAPV) de la provincia de Entre Ríos
 

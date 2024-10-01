@@ -53,18 +53,8 @@ en desarrollo
 
 ### Diagrama conceptual (opcional)
 
-Ejemplo usando Live Editor https://mermaid.js.org/ (ejemplo opcional)
-```mermaid
-erDiagram
-CUSTOMER  }|..|{  DELIVERY-ADDRESS  : has
-CUSTOMER  ||--o{  ORDER  : places
-CUSTOMER  ||--o{  INVOICE  : "liable for"
-DELIVERY-ADDRESS  ||--o{  ORDER  : receives
-INVOICE  ||--|{  ORDER  : covers
-ORDER  ||--|{  ORDER-ITEM  : includes
-PRODUCT-CATEGORY  ||--|{  PRODUCT  : contains
-PRODUCT  ||--o{  ORDER-ITEM  : "ordered in"
-```
+![diagrama_relacional](https://github.com/franBarrientos/gestion_proyecto_construcciones/blob/main/doc/diseñoconceptual.png)
+
 ### Diagrama relacional
 ![diagrama_relacional](https://github.com/franBarrientos/gestion_proyecto_construcciones/blob/main/doc/Modelo_Relacional.jpg)
 v

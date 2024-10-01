@@ -52,6 +52,7 @@ en desarrollo
 
 
 ### Diagrama conceptual (opcional)
+
 Ejemplo usando Live Editor https://mermaid.js.org/ (ejemplo opcional)
 ```mermaid
 erDiagram

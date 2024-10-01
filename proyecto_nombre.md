@@ -66,7 +66,7 @@ PRODUCT-CATEGORY  ||--|{  PRODUCT  : contains
 PRODUCT  ||--o{  ORDER-ITEM  : "ordered in"
 ```
 ### Diagrama relacional
-![diagrama_relacional](https://github.com/dovillegas/basesdatos_proyecto_estudio/blob/main/doc/Modelo_Relacional.jpg)
+![diagrama_relacional](https://github.com/franBarrientos/gestion_proyecto_construcciones/blob/main/doc/Modelo_Relacional.jpg)
 v
 
 

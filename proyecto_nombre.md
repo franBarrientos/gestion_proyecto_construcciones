@@ -6,10 +6,10 @@ PROYECTO SOBRE LA GESTION DE OBRAS DEL Instituto Autárquico de Planeamiento y V
 **Asignatura**: Bases de Datos I (FaCENA-UNNE)
 
 **Integrantes**:
-Cabrera Romani Lucas Ivan
-Brollo Celso, Raul
-Barrientos Franco
-Capay Gabriel
+Cabrera Romani, Lucas Ivan/
+Brollo Celso, Raul/
+Barrientos, Franco/
+Capay, Gabriel
 
 **Año**: 2024
 
@@ -62,35 +62,24 @@ v
 
 ### Diccionario de datos
 
-Acceso al documento [PDF](doc/diccionario_datos.pdf) del diccionario de datos.
+Acceso al documento [PDF](doc/DiccionarioDeDatos.pdf) del diccionario de datos.
 
 
 ### Desarrollo TEMA 1 "----"
 
-Fusce auctor finibus lectus, in aliquam orci fermentum id. Fusce sagittis lacus ante, et sodales eros porta interdum. Donec sed lacus et eros condimentum posuere. 
-
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_1](script/tema01_nombre_tema)
+en desarollo
 
 ### Desarrollo TEMA 2 "----"
 
-Proin aliquet mauris id ex venenatis, eget fermentum lectus malesuada. Maecenas a purus arcu. Etiam pellentesque tempor dictum. 
-
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_2](script/tema02_nombre_tema)
-
-... 
+en desarollo 
 
 
 ## CAPÍTULO V: CONCLUSIONES
 
-Nunc sollicitudin purus quis ante sodales luctus. Proin a scelerisque libero, vitae pharetra lacus. Nunc finibus, tellus et dictum semper, nisi sem accumsan ligula, et euismod quam ex a tellus. 
+(conclusiones / dificultades / desafíos y perspectivas)
 
 
 
 ## BIBLIOGRAFÍA DE CONSULTA
-
- 1. List item
- 2. List item
- 3. List item
- 4. List item
- 5. List item
+(material de lectura/consulta que se utilizó para el desarrollo del trabajo)
 

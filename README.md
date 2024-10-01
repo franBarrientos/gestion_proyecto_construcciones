@@ -1,9 +1,9 @@
 # Bases de Datos I - Proyecto de Estudio
 
 # Integrantes 
-**Barrientos Franco**
-**Cabrera Romani Lucas Ivan**
-**Celso Brollo Raul**
+**Barrientos Franco** | 
+**Cabrera Romani Lucas Ivan** | 
+**Celso Brollo Raul** | 
 **Agusto Gabriel Capay**
 
 Este espacio propone presentar la información para organizar el desarrollo del Proyecto de Estudio de la asignatura Bases de Datos I (FaCENA - UNNE)

@@ -2,7 +2,7 @@
 
 # Integrantes 
 **Barrientos Franco** | 
-**Cabrera Romani Lucas Ivan** | 
+**Cabrera Romani Lucas Ivan 43108457** | 
 **Celso Brollo Raul** | 
 **Gabriel Augusto Capay**
 

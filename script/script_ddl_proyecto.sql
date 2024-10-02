@@ -1,11 +1,58 @@
 CREATE DATABASE proyecto_bd;
-
+GO
 USE proyecto_bd;
+GO
+CREATE TABLE Etapas
+(
+  id_etapa INT  IDENTITY(1,1) NOT NULL,
+  nombre_etapa VARCHAR(200) NOT NULL,
+  CONSTRAINT PK_id_etapas PRIMARY KEY (id_etapa)
+);
+
+CREATE TABLE Tipo_contrataciones
+(
+  id_contrataciones INT  IDENTITY(1,1)  NOT NULL,
+  nombre_contrataciones VARCHAR(200) NOT NULL,
+  CONSTRAINT PK_id_contrataciones PRIMARY KEY (id_contrataciones)
+);
+
+CREATE TABLE Provincia
+(
+  id_provincia INT  IDENTITY(1,1)  NOT NULL,
+  nombre_provincia VARCHAR(200) NOT NULL,
+  CONSTRAINT PK_id_provincia PRIMARY KEY (id_provincia)
+);
+
+CREATE TABLE Representante_constructora
+(
+  id_representante INT  IDENTITY(1,1)  NOT NULL,
+  nombre_representante VARCHAR(200) NOT NULL,
+  apellido_representante VARCHAR(200) NOT NULL,
+  dni_representante INT NOT NULL,
+  correo_representante VARCHAR(200) NOT NULL,
+  CONSTRAINT PK_id_representante PRIMARY KEY (id_representante)
+);
+ALTER TABLE Representante_constructora ADD CONSTRAINT UQ_representante_constructora_dni UNIQUE (dni_representante);
+ALTER TABLE Representante_constructora ADD CONSTRAINT UQ_representante_constructora_correo UNIQUE (correo_representante);
+
+CREATE TABLE Inspector
+(
+  id_inspector INT  IDENTITY(1,1) NOT NULL,
+  nombre_inspector VARCHAR(200) NOT NULL,
+  apellido_inspector VARCHAR(200) NOT NULL,
+  dni_inspector INT NOT NULL,
+  telefono_inspector INT NOT NULL,
+  correo_inspector VARCHAR(200) NOT NULL,
+  CONSTRAINT PK_id_inspector PRIMARY KEY (id_inspector)
+);
+
+ALTER TABLE Inspector ADD CONSTRAINT UQ_inspector_dni UNIQUE (dni_inspector);
+ALTER TABLE Inspector ADD CONSTRAINT UQ_inspector_correo UNIQUE (correo_inspector);
 
 CREATE TABLE Tipo_construccion
 (
   id_tipoconstruccion INT  IDENTITY(1,1)  NOT NULL,
-  nombre_construccion VARCHAR(200) NOT NULL,			
+  nombre_construccion INT NOT NULL,
   CONSTRAINT PK_id_tipo_construccion PRIMARY KEY (id_tipoconstruccion)
 );
 
@@ -50,7 +97,7 @@ CREATE TABLE Proyectos
 
 CREATE TABLE Proyecto_Etapas
 (
-  nro_proyecto INT NOT NULL, 
+  nro_proyecto INT IDENTITY(1,1)  NOT NULL,
   id_etapa INT NOT NULL,
  CONSTRAINT PK_nroproyecto PRIMARY KEY (nro_proyecto, id_etapa),
   CONSTRAINT FK_nroproyecto_etapa FOREIGN KEY (nro_proyecto) REFERENCES Proyectos(nro_proyecto),
@@ -67,5 +114,5 @@ CREATE TABLE Inspecciones
   id_etapa INT NOT NULL,
  CONSTRAINT PK_inspecciones_nroproyecto_etapa PRIMARY KEY (id_inspecciones, nro_proyecto, id_etapa),
   CONSTRAINT FK_inspeccion_inspector FOREIGN KEY (id_inspector) REFERENCES Inspector(id_inspector),
-  CONSTRAINT FK_inspecciones_nroproyecto_etapa FOREIGN KEY (nro_proyecto, id_etapa) REFERENCES Poyecto_Etapas(nro_proyecto, id_etapa)
+  CONSTRAINT FK_inspecciones_nroproyecto_etapa FOREIGN KEY (nro_proyecto, id_etapa) REFERENCES Proyecto_Etapas(nro_proyecto, id_etapa)
 );

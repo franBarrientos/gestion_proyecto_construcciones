@@ -9,10 +9,10 @@ PROYECTO SOBRE LA GESTION DE OBRAS DEL Instituto Autárquico de Planeamiento y V
 **Asignatura**: Bases de Datos I (FaCENA-UNNE)
 
 **Integrantes**:
-Cabrera Romani, Lucas Ivan/
-Brollo Celso, Raul/
-Barrientos, Franco/
-Capay, Gabriel
+*Cabrera Romani, Lucas Ivan 43108457
+*Brollo Celso, Raul 42733217
+*Barrientos, Franco 45645852
+*Capay, Gabriel 41008590
 
 **Año**: 2024
 

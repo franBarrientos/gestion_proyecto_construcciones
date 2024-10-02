@@ -52,7 +52,7 @@ ALTER TABLE Inspector ADD CONSTRAINT UQ_inspector_correo UNIQUE (correo_inspecto
 CREATE TABLE Tipo_construccion
 (
   id_tipoconstruccion INT  IDENTITY(1,1)  NOT NULL,
-  nombre_construccion INT NOT NULL,
+  nombre_construccion VARCHAR(200) NOT NULL,
   CONSTRAINT PK_id_tipo_construccion PRIMARY KEY (id_tipoconstruccion)
 );
 

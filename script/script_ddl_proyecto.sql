@@ -97,7 +97,7 @@ CREATE TABLE Proyectos
 
 CREATE TABLE Proyecto_Etapas
 (
-  nro_proyecto INT IDENTITY(1,1)  NOT NULL,
+  nro_proyecto INT NOT NULL,
   id_etapa INT NOT NULL,
  CONSTRAINT PK_nroproyecto PRIMARY KEY (nro_proyecto, id_etapa),
   CONSTRAINT FK_nroproyecto_etapa FOREIGN KEY (nro_proyecto) REFERENCES Proyectos(nro_proyecto),

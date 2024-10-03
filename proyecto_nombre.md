@@ -86,6 +86,11 @@ Acceso al documento [PDF](doc/DiccionarioDeDatos.pdf) del diccionario de datos.
 
 ![image](https://github.com/user-attachments/assets/3efdf690-5066-4c07-b7bd-43026a9a524a)
 
+![image](https://github.com/user-attachments/assets/44843dc8-0f22-4519-8e13-6d3862a877d3)
+![image](https://github.com/user-attachments/assets/53d13efd-b948-4a97-a308-646f2b97a2aa)
+
+
+
 ![image](https://github.com/user-attachments/assets/4c2d3e90-2bb8-4459-886b-0674961f8ed7)
 
 ![image](https://github.com/user-attachments/assets/47f16a2c-50fd-4333-93c8-dd2ff8bb3cbe)

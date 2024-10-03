@@ -76,6 +76,44 @@ v
 ### Diccionario de datos
 
 Acceso al documento [PDF](doc/DiccionarioDeDatos.pdf) del diccionario de datos.
+![image](https://github.com/user-attachments/assets/c127b20f-fdfe-4373-a748-d4588d5ba4fd)
+
+![image](https://github.com/user-attachments/assets/134d8b81-2701-4085-9cd5-86349cfc5197)
+
+![image](https://github.com/user-attachments/assets/110d6073-a397-4794-b03f-344af728747c)
+
+![image](https://github.com/user-attachments/assets/c01b147d-c3b9-4a6c-a81c-01763ef3e53f)
+
+![image](https://github.com/user-attachments/assets/3efdf690-5066-4c07-b7bd-43026a9a524a)
+
+![image](https://github.com/user-attachments/assets/4c2d3e90-2bb8-4459-886b-0674961f8ed7)
+
+![image](https://github.com/user-attachments/assets/47f16a2c-50fd-4333-93c8-dd2ff8bb3cbe)
+
+![image](https://github.com/user-attachments/assets/e89a2406-d469-469b-a29a-5d63053bebbd)
+![image](https://github.com/user-attachments/assets/a09b91dd-f1f1-4cda-b7b6-d5f07a4f5ff6)
+
+![image](https://github.com/user-attachments/assets/ec6d63de-2152-4044-b83a-6954f1aaeac5)
+![image](https://github.com/user-attachments/assets/20069e40-822a-4c3d-8270-6acd276cadd7)
+
+![image](https://github.com/user-attachments/assets/c61f9faf-b843-4b31-a32b-b6db2a0b9a34)
+![image](https://github.com/user-attachments/assets/1cf1d8af-ea8c-46ce-82b8-670b1eb7e882)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### Desarrollo TEMA 1 "----"

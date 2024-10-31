@@ -46,7 +46,136 @@ Se estable como objetivo diseñar una base de datos que represente el caso de es
 
 
 
-**TEMA 2 " ----- "** 
+TEMA 2: Funciones y Procedimientos Almacenados
+PROCEDIMIENTOS ALMACENADOS
+
+Los procedimientos almacenados son similares a los procedimientos de otros lenguajes de programación en tanto que pueden:
+Que se realicen cálculos o procesos complejos y se devuelvan múltiples resultados al contexto que hizo la llamada. 
+Contener instrucciones de programación que realicen operaciones en la base de datos, incluidas las llamadas a otros procedimientos.
+ Permiten manejar transacciones de manera eficiente, garantizando la atomicidad de las operaciones.
+ Agrupan múltiples sentencias SQL en un solo bloque, lo que facilita su ejecución y reutilización.
+ Facilitan el mantenimiento del código, ya que cualquier cambio en la lógica se puede hacer en el procedimiento sin afectar a la aplicación.
+Pueden aceptar parámetros para personalizar su comportamiento y devolver múltiples valores a través de parámetros de salida.
+En resumen pueden recibir parametro o no, como  realizar operaciones que pueden incluir múltiples acciones (como inserciones, actualizaciones o eliminaciones) y no están limitados a devolver un solo valor. 
+
+Un procedimiento puede hacer referencia a tablas que aún no existan. En el momento de la creación, solo se realiza la comprobación de la sintaxis. El procedimiento no se compila hasta que se ejecute por primera vez. Solamente durante la compilación se resuelven todos los objetos a los que se haga referencia en el procedimiento.aunque este procedimiento provocará un error en tiempo de ejecución si las tablas a las que hace referencia no existen.
+
+Procedimientos Almacenados del Sistema
+Son procedimientos predefinidos que vienen con SQL Server. Proporcionan funcionalidad esencial para administrar y configurar la base de datos. ejemplo: sp_help-sp_adduser-sp_who. Se usan generalmente utilizados para tareas de administración, monitoreo y configuración del sistema. No requieren que el usuario los defina ni los implemente.
+Procedimientos Almacenados Definidos por el Usuario
+Son procedimientos creados por los usuarios para realizar operaciones específicas y personalizadas en la base de datos. Utilizados para automatizar procesos, realizar cálculos complejos o encapsular operaciones que se usan con frecuencia en aplicaciones.
+Distintos usos de procedimientos en sql server
+Devolver más de un conjunto de resultados.
+Crear un procedimiento almacenado CLR.
+Crear un procedimiento con parámetros de entrada.
+Usar un procedimiento con parámetros comodín.
+Usar parámetros OUTPUT.
+Usar UPDATE en un procedimiento.
+Usar TRY CATCH.
+Crear un procedimiento almacenado que ejecute una instrucción SELECT.
+
+Sintaxis
+
+CREATE [ OR ALTER ] { PROC | PROCEDURE }
+    [schema_name.] procedure_name [ ; number ]
+    [ { @parameter_name [ type_schema_name. ] data_type }
+        [ VARYING ] [ NULL ] [ = default ] [ OUT | OUTPUT | [READONLY]
+    ] [ ,...n ]
+[ WITH <procedure_option> [ ,...n ] ]
+[ FOR REPLICATION ]
+AS { [ BEGIN ] sql_statement [;] [ ...n ] [ END ] }
+[;]
+
+<procedure_option> ::=
+    [ ENCRYPTION ]
+    [ RECOMPILE ]
+    [ EXECUTE AS Clause ]
+
+Explicación de algunos de sus argumentos
+CREATE: se usa para crear el procedimiento.
+OR ALTER: permite modificar los procedimientos luego de crearlo.
+PROC o PROCEDURE: permite identificar que se va a crear un procedimientos, se puede definir con ambas formas.
+@parameter_name : parametros que puede recibir o no el procedimiento.
+ [ type_schema_name. ]: El nombre del esquema al que pertenece el procedimiento. Los procedimientos se enlazan a un esquema. 
+procedure_name:  nombre del procedimiento.
+[ BEGIN ] sql_statement [;] [ ...n ] [ END ] : bloque de sentencia que puede definirse dentro del procedimiento.
+
+
+Ejecutar un procedimiento almacenado
+
+ 
+1. Conexión a la Base de Datos Debes estar conectado a la base de datos donde se encuentra el procedimiento almacenado..
+2. Conocer el Nombre del Procedimiento Debes conocer el nombre exacto del procedimiento almacenado que deseas ejecutar.
+3. Parámetros (si es necesario) Si el procedimiento requiere parámetros de entrada, debes conocer sus tipos y el orden en que se deben pasar. Asegúrate de proporcionar los valores adecuados.
+4. Sintaxis para Ejecutar el Procedimiento La forma básica de ejecutar un procedimiento almacenado es utilizando la instrucción EXEC o EXECUTE. Seguido del nombre del procedimiento almacenado y en caso de tener sus parametros.
+   Funciones
+Una función definida por el usuario acepta parámetros, realiza una acción, como un cálculo complejo, y devuelve el resultado de esa acción como un valor. El valor de retorno puede ser un valor escalar (único) o una tabla. 
+
+Clasificación de funciones
+Funciones de agregado: toman un conjunto de valores y nos devuelven un solo valor ej: sum()-avg()-count()-max()-min().
+Funciones de fila: operan en cada fila de forma individual en una tabla y permiten realizar cálculos o manipulaciones de datos.ej: upper()-lower()-substring().
+Funciones determinísticas: que siempre retornan el mismo resultado.
+Funciones no deterministas: retornan distintos resultados cada vez que son llamadas. aunque tengan el mismo parámetro. ej: getdate(), etc.
+
+
+Limitaciones
+Las funciones definidas por el usuario no se pueden utilizar para realizar acciones que modifiquen el estado de la base de datos. Por ello, no pueden incluirse INSERTS, UPDATES o DELETE.
+No existen parámetros de salida a diferencia de los procedimientos almacenados.
+No pueden realizarse sentencias de control de transacciones como BEGIN TRANSACTION, COMMIT o ROLLBACK.
+No pueden usarse dentro de una función comandos DDL como CREATE, ALTER, o DROP
+No se pueden crear tablas temporales dentro de una función.
+
+
+
+Algunas funciones 
+Funciones escalares: retornan un valor escalar
+Funciones de tabla de varias instrucciones: retornan una tabla
+Funciones de tabla en línea: retornan una tabla
+
+
+Sintaxis
+
+CREATE [ OR ALTER ] FUNCTION [ schema_name. ] function_name
+( [ { @parameter_name [ AS ] [ type_schema_name. ] parameter_data_type [ NULL ]
+ [ = default ] [ READONLY ] }
+    [ , ...n ]
+  ]
+)
+RETURNS return_data_type
+    [ WITH <function_option> [ , ...n ] ]
+    [ AS ]
+    BEGIN
+        function_body
+        RETURN scalar_expression
+    END
+[ ; ]
+
+OR ALTER Altera condicionalmente la función sólo si ya existe.
+NOMBRE_ESQUEMA El nombre del esquema al que pertenece la función definida por el usuario.
+nombre_funcion El nombre de la función definida por el usuario. 
+@nombre_parametro es el nombre del parametro que recibe
+tipo_de_dato_retorno El valor de retorno de una función escalar definida por el usuario.
+cuerpo_funcion donde permite definir un bloque para realizar ciertas operaciones
+
+expresion_escalar Especifica el valor escalar que devuelve la función escalar.
+
+Ejecución de funciones
+Una función se ejecuta con la palabra reservada Select siguiendo obligatoriamente el esquema, en  caso de que se este trabajo con el esquema por defecto (dbo.), colocarse obligatoriamente luego siguiendo f_nombre_funcion (@parametrod);
+En caso de no incluir el esquema lanzará el siguiente error:
+
+El mensaje 195, Nivel 15, Estado 10, Línea 20 ‘f_nombre_funcion’ no es un nombre de función incorporado reconocido
+Una función se puede almacenar en un esquema definido por un usuario, en caso de que así lo desee. Esto tiene múltiples ventajas entre las cuales podemos destacar:
+Para tener funciones que se utilicen para una determinada tarea dentro de un sistema, es decir, funciones que compartan una tarea en común.
+Para no tener conflictos en nombre de funciones, debido a que diferentes funciones con tareas distintas pueden tener el mismo nombre pero tienen que estar en distintos esquemas.
+Para lograr una mejor documentación y modularidad, debido a que funciones definidas en esquemas que le corresponden facilitan el entendimiento y comprensión de dicha definición.
+Una función definida dentro de un esquema permite mayor rendimiento al motor de la base de datos. En tiempo de búsqueda, ejecución,etc.
+Conclusión
+Las funciones permiten realizar cálculos simples o transformaciones que se integren en consultas ; a su vez cuando sea necesaria la devolución de datos, el uso de procedimientos
+almacenados es útil cuando se requiere de lógica un poco más compleja, la necesidad de manipular datos y ejecutar múltiples acciones. 
+
+
+
+
 
 ## CAPÍTULO III: METODOLOGÍA SEGUIDA 
 

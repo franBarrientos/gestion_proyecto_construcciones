@@ -169,9 +169,7 @@ Para tener funciones que se utilicen para una determinada tarea dentro de un sis
 Para no tener conflictos en nombre de funciones, debido a que diferentes funciones con tareas distintas pueden tener el mismo nombre pero tienen que estar en distintos esquemas.
 Para lograr una mejor documentación y modularidad, debido a que funciones definidas en esquemas que le corresponden facilitan el entendimiento y comprensión de dicha definición.
 Una función definida dentro de un esquema permite mayor rendimiento al motor de la base de datos. En tiempo de búsqueda, ejecución,etc.
-Conclusión
-Las funciones permiten realizar cálculos simples o transformaciones que se integren en consultas ; a su vez cuando sea necesaria la devolución de datos, el uso de procedimientos
-almacenados es útil cuando se requiere de lógica un poco más compleja, la necesidad de manipular datos y ejecutar múltiples acciones. 
+ 
 
 
 
@@ -259,9 +257,12 @@ en desarollo
 en desarollo 
 
 
-## CAPÍTULO V: CONCLUSIONES
+ CAPÍTULO V: CONCLUSIONES
 
-(conclusiones / dificultades / desafíos y perspectivas)
+Las funciones permiten realizar cálculos simples o transformaciones que se integren en consultas ; a su vez cuando sea necesaria la devolución de datos, el uso de procedimientos
+almacenados es útil cuando se requiere de lógica un poco más compleja, la necesidad de manipular datos y ejecutar múltiples acciones.
+Es de mucha utilidad la realizacion  de procedimientos y funciones, debido a que ayudan al motor de base de datos a simplificar muchas tareas.
+
 
 
 

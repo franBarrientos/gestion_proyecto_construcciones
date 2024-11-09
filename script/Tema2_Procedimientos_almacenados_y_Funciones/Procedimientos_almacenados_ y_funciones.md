@@ -1,4 +1,4 @@
-#Procedimiento almacenados y Funciones almacenadas
+#Procedimiento almacenados y Funciones almacenadas#
 
 ##INTROODUCCION
 En  SQL-server los procedimientos almacenados son utilizados para realizar tareas similares a los procedimientos de otros lenguajes de programación, como realizar cálculos que devuelvan uno o múltiples resultados, realizar procesos complejos como actualizar, eliminar o actualizar datos en la base de datos. Es decir, que un procedimiento puede ser utilizado para modificar la estructura de datos, manejar transacciones, agrupar múltiples sentencias entre otras tareas.

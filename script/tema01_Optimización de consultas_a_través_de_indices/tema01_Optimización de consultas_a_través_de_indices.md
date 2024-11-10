@@ -126,8 +126,8 @@ correspondientes.
 #### Estadistica: 
 | CASO | Costo | Lecturas lógicas  |Tiempo transcurrido  |costo de subárbol estimado   |
 |------|--      |---------|---------|---------|
-| 1    | 1%       | 217 |0,010ms |00,22 |
-| 2    | 99%       | 33083|0,136ms  |27,20 |
+| 1    | 1%       | 217 |0,010s |00,22 |
+| 2    | 99%       | 33083|0,136s  |27,20 |
 
 Se propone agregar la columna [estado_inscripcion] al índice creado 
 anteriormente. Se procede a eliminar el índice existente, solo se puede generar un 
@@ -168,8 +168,8 @@ es decir, la que tenga menor variaciones de valores.
 #### Estadistica: 
 | CASO | Costo | Lecturas lógicas  |Tiempo transcurrido  |costo de subárbol estimado   |
 |------|--      |---------|---------|---------|
-| 3.1    | 60%       | 308 |0,017ms |0,25 |
-| 3.2    | 40%       | 152 |0,008ms  |0,17 |
+| 3.1    | 60%       | 308 |0,017s |0,25 |
+| 3.2    | 40%       | 152 |0,008s  |0,17 |
 
 
 ### Índice NO CLUSTERED 

@@ -2,7 +2,6 @@ Hola, contenido de prueba!
 ## Introducción
 En bases de datos, la implementación de copias de seguridad (backup) y recuperación (restore) es fundamental. Las organizaciones confían en los datos para tomar decisiones y operar eficientemente, por lo que cualquier pérdida de datos puede tener efectos negativos graves, tanto operativos como financieros. Un plan de respaldo y recuperación adecuado asegura que, en caso de un fallo, los datos puedan recuperarse de forma rápida y precisa, minimizando los tiempos de inactividad y protegiendo la integridad de la información.
 
-
-
-
-## Conclusión:
+## ¿Qué es un Backup y un Restore?
+1. **Backup: Un backup es la creación de una copia de los datos en un momento específico. Esta copia puede ser utilizada para restaurar el sistema o la base de datos en caso de pérdida de datos, fallas en el hardware, errores del sistema o errores humanos. Existen diferentes tipos de backups, como el completo (full), el incremental y el diferencial, que se ajustan a distintas necesidades de protección y restauración.
+2. **Restore: El restore es el proceso de recuperar los datos a partir de un backup. Permite restablecer los datos a un estado anterior, lo cual es crítico en situaciones de pérdida de datos o desastres. El proceso de restauración devuelve los datos al sistema desde el archivo de respaldo, asegurando así que las operaciones puedan continuar sin pérdida significativa de información.

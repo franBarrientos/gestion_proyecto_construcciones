@@ -8,7 +8,7 @@ En bases de datos, la implementación de copias de seguridad (backup) y recupera
 
 ## ¿Por qué es importante el Backup y Restore?
 Realizar backups y tener la capacidad de restaurar datos no solo protege la información de fallas, sino que también brinda confianza en la integridad del sistema de datos. Algunas razones clave para la importancia de estos procesos son:
-•	Protección ante pérdida de datos: Los datos pueden perderse por diversas razones, como fallas en el hardware, corrupción de archivos, ataques de malware, o incluso errores humanos. El backup proporciona una red de seguridad.
-•	Continuidad operativa: En sistemas que dependen de una disponibilidad constante, como los sistemas de negocios, la capacidad de restaurar datos rápidamente es fundamental para mantener la continuidad de las operaciones.
-•	Recuperación ante desastres: En situaciones de emergencia como incendios o inundaciones, un backup almacenado de forma segura permite recuperar la información y restaurar las operaciones a la normalidad.
-•	Cumplimiento de normativas: Muchas industrias tienen requisitos legales para el almacenamiento y recuperación de datos, y una estrategia de backup adecuada puede asegurar el cumplimiento de estas normativas.
+- Protección ante pérdida de datos: Los datos pueden perderse por diversas razones, como fallas en el hardware, corrupción de archivos, ataques de malware, o incluso errores humanos. El backup proporciona una red de seguridad.
+- Continuidad operativa: En sistemas que dependen de una disponibilidad constante, como los sistemas de negocios, la capacidad de restaurar datos rápidamente es fundamental para mantener la continuidad de las operaciones.
+- Recuperación ante desastres: En situaciones de emergencia como incendios o inundaciones, un backup almacenado de forma segura permite recuperar la información y restaurar las operaciones a la normalidad.
+-	Cumplimiento de normativas: Muchas industrias tienen requisitos legales para el almacenamiento y recuperación de datos, y una estrategia de backup adecuada puede asegurar el cumplimiento de estas normativas.

@@ -54,6 +54,14 @@ Para llamar a un procedimiento almacenado utilizamos la palabra reservada call.
 
 6. Permite reducir el tráfico de red, debido a que las instrucciones se ejecutan en el servidor de la base de datos, debido a que el procedimiento si realiza múltiples operaciones reduce la cantidad de datos enviados entre el cliente y el servidor.
 
+# TIPOS DE PROCEDIMIENTOS ALMACENADOS
+1. Procediminetos almacenados del sistema: son procedimientos que incluye el SQL server, que como su nombre lo dicen son procedimientos que se encuentran almacenado en el sistema. Comienzan o suelen comenzar con el prefijo SP_ y son muy utiles para realizar tareas de administracion o de consulta de informacion al sistema ejemplo:
+   ```sp_help: muestra informacion sobre tablas, vistas y objetos```
+    ```sp_who: muestra informacion de usuarios y procesos```
+2. Procedimientos almacenados definidos por el usuario: Son procediminetos generados justamente por el usuario, para realizar tareas personalizadas sobre ciertos datos en la base de datos. Pueden incluir parametros, bucles y condiciones.
+3. Procedimientos almacenados temporales: los cuales pueden ser locales: comienzan con # y solo estan disponible en la sesion donde se crearon y luego estan los globales: comienzan con ## y estan disponibles para todas las sesiones.
+4. Procedimientos almacenados extendidos : permiten ejecutar programas que fueron generados en otros lenguajes de programacion, empiezan con el prefijo xp_. Actualmente no se los utiliza mucho debido a problemas que pueden generar en temas de seguridad.
+   
 # FUNCIONES
 
 # ¿QUE ES UNA FUNCION ALMACENADA?
@@ -98,6 +106,12 @@ El mensaje 195, Nivel 15, Estado 10, Línea 20 ‘f_nombre_funcion’ no es un n
 # ALMACENAMIENTO DE FUNCIONES ALMACENADAS DEFINIDAS POR EL USUARIO
 
 Las funciones definidas por el usuario se almacenan en la siguiente carpeta de Funciones y dependiendo del tipo de función se almacenarán en las carpetas : Funciones con valores de tablas, Funciones escalares, Funciones de agregado.
+
+#TIPOS DE FUNCIONES ALMACENADAS 
+1. Funciones escalares: son funciones que devuelven un determinado valor ya sea int, varchar, date, etc. Se utilizan para realizar calculos.
+2. Funciones de tabla con valores: Estas funciones en lugar de devolver un unico valor, permiten devolver una tabla.  Permiten devolver multiples valores, pero en forma de tabla. Permiten la utilizacion de bloque de codigo.
+3. Funciones escalares de fila: estas funciones realuzan calculos o transformaciones en cada fila de manera individual, algunas de ellas son SUBSTRING(),LEN(),GETDATE(),DATEDIFF(),etc.
+
 
 # CONCLUSION
 

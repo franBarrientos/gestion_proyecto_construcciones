@@ -71,7 +71,8 @@ BACKUP LOG proyecto_bd TO DISK = 'C:\Backup\proyecto_bd_log2.trn';
 El Backup es importante ya que todos los dispositivos de almacenamiento, aunque sea en un grado pequeño, pueden presentar fallas. Contar con una copia de seguridad es fundamental para el desarrollador, ya que la posibilidad de que dos dispositivos fallen simultáneamente es significativamente menor, garantizando así una mayor protección de la información almacenada.
 
 
-## 2. **Restore:** El restore es el proceso de recuperar los datos a partir de un backup. Permite restablecer los datos a un estado anterior, lo cual es crítico en situaciones de pérdida de datos o desastres. El proceso de restauración devuelve los datos al sistema desde el archivo de respaldo, asegurando así que las operaciones puedan continuar sin pérdida significativa de información.
+## 2. **Restore:** 
+El restore es el proceso de recuperar los datos a partir de un backup. Permite restablecer los datos a un estado anterior, lo cual es crítico en situaciones de pérdida de datos o desastres. El proceso de restauración devuelve los datos al sistema desde el archivo de respaldo, asegurando así que las operaciones puedan continuar sin pérdida significativa de información.
 
 ### Ejemplo restaurar al primer punto del log (después de los primeros 10 inserts):
 

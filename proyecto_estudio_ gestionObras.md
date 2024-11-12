@@ -252,6 +252,27 @@ El proceso de Backup y Restore en bases de datos permite proteger y recuperar in
 ### Configuración del Modelo de Recuperación
 Para que el Backup en línea y los Transaction Log Backups funcionen correctamente, es necesario ajustar el modelo de recuperación de la base de datos. En SQL Server, cambiar el modelo de recuperación a "Full" para habilitar respaldos más avanzados.
 
+### Backup Full 
+Este tipo de backup realiza una copia completa de todos los datos en el sistema en un momento específico. Generalmente se realiza como el primer respaldo y luego periódicamente para capturar el estado completo de los datos.
+
+#### Ejemplo Backup FULL
+
+```sql
+BACKUP DATABASE proyecto_bd  
+TO DISK = 'C:\backup\base_datos_full.bak';
+```
+
+
+### Backup Transaction Log
+Los Transaction Log Backups permiten guardar solo las transacciones desde el último Backup completo o de log. Este proceso registra eventos de cambio incremental, lo cual permite restauraciones detalladas y precisas.
+
+#### Ejemplo Backup Transaction Log
+
+```sql
+BACKUP LOG proyecto_bd 
+TO DISK = 'C:\backup\base_datos_log.trn';
+```
+
 #### Importancia:
 1. Protección ante pérdida de datos: Protege frente a fallos de hardware, ataques o errores humanos.
 2. Continuidad operativa: Permite restaurar rápidamente los datos para evitar tiempos de inactividad.

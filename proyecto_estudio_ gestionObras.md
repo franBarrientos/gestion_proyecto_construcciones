@@ -196,14 +196,9 @@ SQL Server permite configurar la autenticación en modo mixto, lo cual habilita 
 
 ####	Ejemplo:
 
-sql
-Copiar código
-EXEC xp_instance_regwrite 
-    N'HKEY_LOCAL_MACHINE', 
-    N'SOFTWARE\Microsoft\MSSQLServer\MSSQLServer', 
-    N'LoginMode', 
-    REG_DWORD, 
-    2;
+```sql
+EXEC xp_instance_regwrite N'HKEY_LOCAL_MACHINE', N'SOFTWARE\Microsoft\MSSQLServer\MSSQLServer', N'LoginMode', REG_DWORD, 2;
+```
 
 
 ### Permisos a Nivel de Usuarios

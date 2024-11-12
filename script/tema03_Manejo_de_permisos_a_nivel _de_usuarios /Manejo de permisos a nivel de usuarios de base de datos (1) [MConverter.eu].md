@@ -231,6 +231,35 @@ No podemos visualizar ningún otro esquema de otras DB.
 ![](media/image1.png){width="4.438048993875766in"
 height="7.622222222222222in"}
 
+EXISTE OTRA MANERA DE OTORGAR PERMISOS A LOS USARIOS YA SEA DEFINIENDO LOS PERMISOS A NIVEL DE SCHEMA O TABLA
+
+A NIVEL DE ESQUEMA:
+
+GRANT SELECT ON SCHEMA::dbo TO UsuarioAdmin;
+
+-- Otorga permisos de escritura (INSERT) sobre todas las tablas en el esquema dbo
+GRANT INSERT ON SCHEMA::dbo TO UsuarioAdmin;
+
+-- Otorga permisos de actualización (UPDATE) sobre todas las tablas en el esquema dbo
+GRANT UPDATE ON SCHEMA::dbo TO UsuarioAdmin;
+
+-- Otorga permisos de eliminación (DELETE) sobre todas las tablas en el esquema dbo
+GRANT DELETE ON SCHEMA::dbo TO UsuarioAdmin;
+
+A NIVEL DE TABLA:
+GRANT SELECT ON MiTabla TO UsuarioAdmin;
+
+-- Otorgar permiso de INSERT en la tabla MiTabla
+GRANT INSERT ON MiTabla TO UsuarioAdmin;
+
+-- Otorgar permiso de UPDATE en la tabla MiTabla
+GRANT UPDATE ON MiTabla TO UsuarioAdmin;
+
+-- Otorgar permiso de DELETE en la tabla MiTabla
+GRANT DELETE ON MiTabla TO UsuarioAdmin;
+
+
+
 EJECUTAR INSERT CON USUARIO QUE SOLO TIENE PERMISOS DE LECTURA:
 
 *\[2024-10-27 19:13:55\]* \[S0005\]\[229\] Line 1: *The* INSERT

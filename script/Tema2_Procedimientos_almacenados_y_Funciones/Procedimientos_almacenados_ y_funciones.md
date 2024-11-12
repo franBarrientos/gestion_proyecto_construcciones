@@ -87,7 +87,7 @@ RETURNS return_data_type
 ```
 # EJECUCION DE FUNCIONES
 
-Una función se ejecuta con la palabra reservada Select siguiendo obligatoriamente el esquema, en  caso de que se este trabajo con el esquema por defecto (dbo.), colocarse obligatoriamente luego siguiendo f_nombre_funcion (@parametrod);
+Una función se ejecuta con la palabra reservada Select siguiendo obligatoriamente el esquema, en  caso de que se este trabajando con el esquema por defecto (dbo.), colocarse obligatoriamente luego siguiendo f_nombre_funcion (@parametrod);
 En caso de no incluir el esquema lanzará el siguiente error:
 El mensaje 195, Nivel 15, Estado 10, Línea 20 ‘f_nombre_funcion’ no es un nombre de función incorporado reconocido
 

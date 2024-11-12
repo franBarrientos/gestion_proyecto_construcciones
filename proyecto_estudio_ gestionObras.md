@@ -52,11 +52,15 @@ En bases de datos los índices, son estructuras que aceleran la recuperación de
 - Columnstore Index: Almacena datos en columnas en lugar de filas, optimizando consultas analíticas de grandes volúmenes de datos.
 - Índice Filtrado: Permite indexar solo un subconjunto de datos mediante predicados, ideal para consultas de filtrado específico.
 - Índice Espacial: Optimiza consultas que involucran datos espaciales.
+  
 ##Consideraciones al Usar Índices
+
 1.	Eficiencia en Consultas: Puede reducir el tiempo de búsqueda permitiendo que el optimizador de consultas acceda a los datos necesarios sin escanear toda la tabla.
 2.	Costo en Operaciones de Modificación: Instrucciones como INSERT, UPDATE, y DELETE requieren que los índices se actualicen lo cual consume recursos adicionales.
 3.	Selección de Columnas: Algunas columnas no pueden ser claves de índices, como aquellas de tipo text, ntext, y image.
+   
 ##Evaluación y Ejemplo de Uso
+
 Se realizaron pruebas con diferentes configuraciones de índices para medir el impacto en el rendimiento del proyecto:
 - Un índice clustered en una columna de baja cardinalidad (pocos valores únicos) mostró un mejor rendimiento en consultas que uno en una columna de alta cardinalidad.
 - Un índice nonclustered mejoró el tiempo de respuesta, pero aumentó significativamente el espacio de almacenamiento.

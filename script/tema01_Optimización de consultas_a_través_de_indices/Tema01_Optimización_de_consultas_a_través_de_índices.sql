@@ -29,4 +29,23 @@ SELECT fecha_inspeccion AS 'Fecha inspeccion' , estado_inspeccion AS 'ESTADO'
   	AND fecha_inspeccion BETWEEN '2023-03-01' AND '2023-05-31';
 
 
+--------Script para aumentar el lote de datos--------------
+DECLARE @i INT = 0;
+
+WHILE @i < 13
+BEGIN
+    INSERT INTO Inspecciones (fecha_inspeccion, estado_inspeccion, id_inspector, nro_proyecto, id_etapa)
+    SELECT 
+        DATEADD(DAY, @i, p.fecha_inspeccion), -- Suma @i días a la fecha de inicio del proyecto
+        CASE 
+            WHEN ABS(CHECKSUM(NEWID())) % 2 = 0 THEN 'Aprobada'  
+            ELSE 'No Aprobada' 
+        END,
+        id_inspector,  
+        nro_proyecto, 
+        id_etapa
+    FROM   Inspecciones p
+
+    SET @i = @i + 1;
+END;
 

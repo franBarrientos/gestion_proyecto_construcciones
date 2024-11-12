@@ -1,5 +1,4 @@
 # Proyecto de Estudio!
-### FORMATO PDF DEL CASO DE ESTUDIO
 
 Acceso al documento [PDF](doc/proyecto_estudio_BaseDatos1.pdf) del diccionario de datos.
 
@@ -16,14 +15,14 @@ PROYECTO SOBRE LA GESTION DE OBRAS DEL Instituto Autárquico de Planeamiento y V
 
 **Año**: 2024
 
-## CAPÍTULO I: INTRODUCCIÓN
+# CAPÍTULO I: INTRODUCCIÓN
 
 
-1.1 Tema
+## 1.1 Tema
 
 El Instituto Autárquico de Planeamiento y Vivienda (IAPV) de Entre Ríos se encarga de construir viviendas en colaboración con empresas privadas. Durante la construcción, se verifica el progreso y la calidad del trabajo a través de inspecciones.
 
-1.2 Definición o planteamiento del problema
+## 1.2 Definición o planteamiento del problema
 
 Nuestro escenario se basa en un Instituto Autárquico de Planeamiento y Vivienda (IAPV) de la provincia de Entre Ríos, que se dedica a la construcción de unidades habitacionales por convenios o concesiones con empresas privadas. Dichas construcciones se pueden llevar a cabo en las distintas ciudades de la provincia. De los proyectos se desean saber cuál es el número de proyecto que se va a realizar en una ciudad y su departamento, el tipo de construcción que se va a realizar (viviendas amuebladas, viviendas techadas, calles asfaltadas, enripiado, etc.), el nombre del proyecto que se llevara a cabo, la fecha de inicio y fin estimada para el proyecto.
 
@@ -33,15 +32,15 @@ Una vez empezada la obra, por cada etapa que se va cumpliendo, un inspector del 
 
 Se debe tener en cuenta que cada proyecto puede tener puede tener varias etapas distintas, y una misma etapa puede tener varias inspecciones. A su vez de cada inspección, se quiere saber el nombre de la etapa, el inspector que realizara dicha inspección, estado de la etapa y fecha en la que se realizó la inspección.
 
-1.3 Objetivo del trabajo práctico
+## 1.3 Objetivo del trabajo práctico
 
 Se estable como objetivo diseñar una base de datos que represente el caso de estudio mencionado anteriormente y generar su modelo físico. Además, como requerimiento se desea generar informes sobre el estado de la obra mediante los procedimientos que nos brinda el motor de base de datos. 
 
 
 
-## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
+# CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
 
-TEMA 1: Optimización de consultas a través de índices
+## TEMA 1: Optimización de consultas a través de índices
 
 En bases de datos los índices, son estructuras que aceleran la recuperación de datos al asociarse con tablas. Existen diversos tipos de índices:
 - Índice Clustered: Un índice clúster ordena y almacena las filas de datos de la tabla o vista por orden en función de la clave del índice clúster.
@@ -52,13 +51,13 @@ En bases de datos los índices, son estructuras que aceleran la recuperación de
 - Índice Filtrado: Permite indexar solo un subconjunto de datos mediante predicados, ideal para consultas de filtrado específico.
 - Índice Espacial: Optimiza consultas que involucran datos espaciales.
   
-## Consideraciones al Usar Índices
+### Consideraciones al Usar Índices
 
 1.	Eficiencia en Consultas: Puede reducir el tiempo de búsqueda permitiendo que el optimizador de consultas acceda a los datos necesarios sin escanear toda la tabla.
 2.	Costo en Operaciones de Modificación: Instrucciones como INSERT, UPDATE, y DELETE requieren que los índices se actualicen lo cual consume recursos adicionales.
 3.	Selección de Columnas: Algunas columnas no pueden ser claves de índices, como aquellas de tipo text, ntext, y image.
    
-## Evaluación y Ejemplo de Uso
+### Evaluación y Ejemplo de Uso
 
 Se realizaron pruebas con diferentes configuraciones de índices para medir el impacto en el rendimiento del proyecto:
 - Un índice clustered en una columna de baja cardinalidad (pocos valores únicos) mostró un mejor rendimiento en consultas que uno en una columna de alta cardinalidad.
@@ -66,7 +65,7 @@ Se realizaron pruebas con diferentes configuraciones de índices para medir el i
 
 
 
-TEMA 2: Funciones y Procedimientos Almacenados
+## TEMA 2: Funciones y Procedimientos Almacenados
 
 Los procedimientos almacenados son similares a los procedimientos de otros lenguajes de programación en tanto que pueden:
 Que se realicen cálculos o procesos complejos y se devuelvan múltiples resultados al contexto que hizo la llamada. 
@@ -79,7 +78,7 @@ En resumen pueden recibir parametro o no, como  realizar operaciones que pueden 
 
 Un procedimiento puede hacer referencia a tablas que aún no existan. En el momento de la creación, solo se realiza la comprobación de la sintaxis. El procedimiento no se compila hasta que se ejecute por primera vez. Solamente durante la compilación se resuelven todos los objetos a los que se haga referencia en el procedimiento.aunque este procedimiento provocará un error en tiempo de ejecución si las tablas a las que hace referencia no existen.
 
-Procedimientos Almacenados del Sistema
+### Procedimientos Almacenados del Sistema
 Son procedimientos predefinidos que vienen con SQL Server. Proporcionan funcionalidad esencial para administrar y configurar la base de datos. ejemplo: sp_help-sp_adduser-sp_who. Se usan generalmente utilizados para tareas de administración, monitoreo y configuración del sistema. No requieren que el usuario los defina ni los implemente.
 Procedimientos Almacenados Definidos por el Usuario
 Son procedimientos creados por los usuarios para realizar operaciones específicas y personalizadas en la base de datos. Utilizados para automatizar procesos, realizar cálculos complejos o encapsular operaciones que se usan con frecuencia en aplicaciones.
@@ -93,7 +92,7 @@ Usar UPDATE en un procedimiento.
 Usar TRY CATCH.
 Crear un procedimiento almacenado que ejecute una instrucción SELECT.
 
-Sintaxis
+#### Sintaxis
 
 CREATE [ OR ALTER ] { PROC | PROCEDURE }
     [schema_name.] procedure_name [ ; number ]
@@ -110,7 +109,7 @@ AS { [ BEGIN ] sql_statement [;] [ ...n ] [ END ] }
     [ RECOMPILE ]
     [ EXECUTE AS Clause ]
 
-Explicación de algunos de sus argumentos
+### Explicación de algunos de sus argumentos
 CREATE: se usa para crear el procedimiento.
 OR ALTER: permite modificar los procedimientos luego de crearlo.
 PROC o PROCEDURE: permite identificar que se va a crear un procedimientos, se puede definir con ambas formas.
@@ -120,7 +119,7 @@ procedure_name:  nombre del procedimiento.
 [ BEGIN ] sql_statement [;] [ ...n ] [ END ] : bloque de sentencia que puede definirse dentro del procedimiento.
 
 
-Ejecutar un procedimiento almacenado
+### Ejecutar un procedimiento almacenado
 
  
 1. Conexión a la Base de Datos Debes estar conectado a la base de datos donde se encuentra el procedimiento almacenado..
@@ -130,14 +129,14 @@ Ejecutar un procedimiento almacenado
    Funciones
 Una función definida por el usuario acepta parámetros, realiza una acción, como un cálculo complejo, y devuelve el resultado de esa acción como un valor. El valor de retorno puede ser un valor escalar (único) o una tabla. 
 
-Clasificación de funciones
+### Clasificación de funciones
 Funciones de agregado: toman un conjunto de valores y nos devuelven un solo valor ej: sum()-avg()-count()-max()-min().
 Funciones de fila: operan en cada fila de forma individual en una tabla y permiten realizar cálculos o manipulaciones de datos.ej: upper()-lower()-substring().
 Funciones determinísticas: que siempre retornan el mismo resultado.
 Funciones no deterministas: retornan distintos resultados cada vez que son llamadas. aunque tengan el mismo parámetro. ej: getdate(), etc.
 
 
-Limitaciones
+### Limitaciones
 Las funciones definidas por el usuario no se pueden utilizar para realizar acciones que modifiquen el estado de la base de datos. Por ello, no pueden incluirse INSERTS, UPDATES o DELETE.
 No existen parámetros de salida a diferencia de los procedimientos almacenados.
 No pueden realizarse sentencias de control de transacciones como BEGIN TRANSACTION, COMMIT o ROLLBACK.
@@ -146,13 +145,13 @@ No se pueden crear tablas temporales dentro de una función.
 
 
 
-Algunas funciones 
+### Algunas funciones 
 Funciones escalares: retornan un valor escalar
 Funciones de tabla de varias instrucciones: retornan una tabla
 Funciones de tabla en línea: retornan una tabla
 
 
-Sintaxis
+#### Sintaxis
 
 CREATE [ OR ALTER ] FUNCTION [ schema_name. ] function_name
 ( [ { @parameter_name [ AS ] [ type_schema_name. ] parameter_data_type [ NULL ]
@@ -178,7 +177,7 @@ cuerpo_funcion donde permite definir un bloque para realizar ciertas operaciones
 
 expresion_escalar Especifica el valor escalar que devuelve la función escalar.
 
-Ejecución de funciones
+### Ejecución de funciones
 Una función se ejecuta con la palabra reservada Select siguiendo obligatoriamente el esquema, en  caso de que se este trabajo con el esquema por defecto (dbo.), colocarse obligatoriamente luego siguiendo f_nombre_funcion (@parametrod);
 En caso de no incluir el esquema lanzará el siguiente error:
 
@@ -194,7 +193,7 @@ Una función definida dentro de un esquema permite mayor rendimiento al motor de
 
 
 
-## CAPÍTULO III: METODOLOGÍA SEGUIDA 
+# CAPÍTULO III: METODOLOGÍA SEGUIDA 
 
 
 
@@ -204,7 +203,7 @@ en desarrollo
 1) ERD Plus: Es la herramienta con la que creamos y editamos los diagramas, permitiéndonos trabajar en equipo y en línea, facilitando también la forma de guardar y editar los cambios sobre los diagramas.
 
 
-## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 
+# CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 
 
 
 

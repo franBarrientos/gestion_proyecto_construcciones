@@ -246,7 +246,7 @@ proyecto_bd\> select \* from dbo.Provincia
 Observamos como es posible leer pero no insertar registros con el
 usuario de lectura.
 
-Otro es el caso cuando ejecutamos en insert con el usuario admin, lo
+Otro es el caso cuando ejecutamos el insert con el usuario admin, lo
 inserta efectivamente:
 
 proyecto_bd\> insert into dbo.Provincia (nombre_provincia) values

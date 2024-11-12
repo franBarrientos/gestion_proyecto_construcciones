@@ -273,6 +273,21 @@ BACKUP LOG proyecto_bd
 TO DISK = 'C:\backup\base_datos_log.trn';
 ```
 
+### Restore
+La restauración de una base de datos implica devolverla a un estado guardado en un backup previo. Esto se puede hacer a partir de un backup completo y, si se necesita un punto en el tiempo específico, aplicando backups de log en el orden correcto
+
+#### Ejemplo de Restore: Utilizando Full y Log
+
+```sql
+RESTORE DATABASE proyecto_bd
+FROM DISK = 'C:\backup\base_datos_full.bak';
+WITH NORECOVERY;
+
+RESTORE LOG proyecto_bd  
+FROM DISK = 'C:\backup\base_datos_log.trn' 
+WITH NORECOVERY;
+```
+
 #### Importancia:
 1. Protección ante pérdida de datos: Protege frente a fallos de hardware, ataques o errores humanos.
 2. Continuidad operativa: Permite restaurar rápidamente los datos para evitar tiempos de inactividad.

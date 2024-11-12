@@ -187,10 +187,55 @@ Para tener funciones que se utilicen para una determinada tarea dentro de un sis
 Para no tener conflictos en nombre de funciones, debido a que diferentes funciones con tareas distintas pueden tener el mismo nombre pero tienen que estar en distintos esquemas.
 Para lograr una mejor documentación y modularidad, debido a que funciones definidas en esquemas que le corresponden facilitan el entendimiento y comprensión de dicha definición.
 Una función definida dentro de un esquema permite mayor rendimiento al motor de la base de datos. En tiempo de búsqueda, ejecución,etc.
- 
 
 
+## TEMA 3: Manejo de permisos a nivel de usuarios de base de datos
 
+### Configuración de Autenticación Mixta SQL Server
+SQL Server permite configurar la autenticación en modo mixto, lo cual habilita tanto la autenticación de Windows como la autenticación propia de SQL Server. Esto es útil en ambientes que combinan usuarios internos, que pueden autenticarse mediante Windows, y usuarios externos con credenciales de SQL Server.
+
+####	Ejemplo:
+
+sql
+Copiar código
+EXEC xp_instance_regwrite 
+    N'HKEY_LOCAL_MACHINE', 
+    N'SOFTWARE\Microsoft\MSSQLServer\MSSQLServer', 
+    N'LoginMode', 
+    REG_DWORD, 
+    2;
+
+
+### Permisos a Nivel de Usuarios
+SQL Server permite crear usuarios específicos con permisos personalizados. Los cuales puede incluir, por ejemplo, usuarios con permisos administrativos completos y otros con permisos limitados a lectura. El objetivo es controlar lo que cada usuario puede hacer en la base de datos.
+
+#### Ejemplo:
+
+sql
+Copiar código
+CREATE LOGIN UsuarioAdmin WITH PASSWORD = 'Admin12!';
+CREATE USER UsuarioAdmin FOR LOGIN UsuarioAdmin;
+EXEC sp_addrolemember 'db_owner', 'UsuarioAdmin';
+
+CREATE LOGIN UsuarioLectura WITH PASSWORD = 'lectura123!';
+CREATE USER UsuarioLectura FOR LOGIN UsuarioLectura;
+EXEC sp_addrolemember 'db_datareader', 'UsuarioLectura'; 
+
+
+Con estos permisos, el usuario de solo lectura podrá consultar datos, pero no insertarlos ni modificarlos.
+
+### Permisos a Nivel de Roles
+SQL Server permite crear roles que agrupan permisos específicos. Estos roles facilitan la administración de permisos cuando varios usuarios necesitan permisos similares. Por ejemplo, un rol que otorga solo permisos de lectura puede asignarse a varios usuarios para evitar configuraciones individuales.
+
+#### Ejemplo:
+
+sql
+Copiar código
+CREATE ROLE LecturaRol;
+GRANT SELECT ON Inspector TO LecturaRol;
+EXEC sp_addrolemember 'LecturaRol', 'UsuarioLectura';
+
+Los usuarios dentro del rol LecturaRol pueden consultar la tabla "Inspector", pero no modificarla.
 
 
 # CAPÍTULO III: METODOLOGÍA SEGUIDA 

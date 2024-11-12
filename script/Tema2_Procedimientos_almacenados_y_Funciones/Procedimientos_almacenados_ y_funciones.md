@@ -61,6 +61,7 @@ Para llamar a un procedimiento almacenado utilizamos la palabra reservada call.
 2. Procedimientos almacenados definidos por el usuario: Son procediminetos generados justamente por el usuario, para realizar tareas personalizadas sobre ciertos datos en la base de datos. Pueden incluir parametros, bucles y condiciones.
 3. Procedimientos almacenados temporales: los cuales pueden ser locales: comienzan con # y solo estan disponible en la sesion donde se crearon y luego estan los globales: comienzan con ## y estan disponibles para todas las sesiones.
 4. Procedimientos almacenados extendidos : permiten ejecutar programas que fueron generados en otros lenguajes de programacion, empiezan con el prefijo xp_. Actualmente no se los utiliza mucho debido a problemas que pueden generar en temas de seguridad.
+
    
 # FUNCIONES
 
@@ -83,8 +84,8 @@ RETURNS return_data_type
         function_body
         RETURN scalar_expression
     END
-[ ; ]
-```
+[ ; ]```
+
 # EJECUCION DE FUNCIONES
 
 Una función se ejecuta con la palabra reservada Select siguiendo obligatoriamente el esquema, en  caso de que se este trabajando con el esquema por defecto (dbo.), colocarse obligatoriamente luego siguiendo f_nombre_funcion (@parametrod);

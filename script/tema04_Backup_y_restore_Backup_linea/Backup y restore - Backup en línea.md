@@ -6,7 +6,7 @@ El Backup y Restore en bases de datos asegura que los datos se puedan recuperar 
 Estas técnicas protegen los datos y aseguran que puedan recuperarse con precisión y rapidez.
 
 
-# ¿Qué es un Backup y un Restore? Implementacion
+# ¿Qué es un Backup y un Restore? Implementación
 
 ##1. **Backup:** Un backup es la creación de una copia de los datos en un momento específico. Esta copia puede ser utilizada para restaurar el sistema o la base de datos en caso de pérdida de datos, fallas en el hardware, errores del sistema o errores humanos. Existen diferentes tipos de backups, como el completo (full), el incremental y el diferencial, que se ajustan a distintas necesidades de protección y restauración.
 
@@ -67,6 +67,9 @@ VALUES
 BACKUP LOG proyecto_bd TO DISK = 'C:\Backup\proyecto_bd_log2.trn';
 ```
 
+#### Importancia del Backup
+El Backup es importante ya que todos los dispositivos de almacenamiento, aunque sea en un grado pequeño, pueden presentar fallas. Contar con una copia de seguridad es fundamental para el desarrollador, ya que la posibilidad de que dos dispositivos fallen simultáneamente es significativamente menor, garantizando así una mayor protección de la información almacenada.
+
 
 ## 2. **Restore:** El restore es el proceso de recuperar los datos a partir de un backup. Permite restablecer los datos a un estado anterior, lo cual es crítico en situaciones de pérdida de datos o desastres. El proceso de restauración devuelve los datos al sistema desde el archivo de respaldo, asegurando así que las operaciones puedan continuar sin pérdida significativa de información.
 
@@ -85,7 +88,7 @@ FROM DISK = 'C:\Backups\proyecto_bd_log1.trn'
 WITH RECOVERY;
 ```
 
-### Ejmeplo restaurar aplicando ambos archivos de log.
+### Ejemplo restaurar aplicando ambos archivos de log.
 
 ```sql
 USE master;
@@ -126,5 +129,11 @@ La implementación de estrategias de backup y restore tiene numerosas ventajas:
 - Diferential Backup: Se hace un respaldo de toda la información modificada desde el último full backup. Ofrece una restauración más rápida en comparación con el incremental más, sin embargo, requiere más almacenamiento.
 - Transaction Log Backup: Guarda las transacciones registradas en el sistema desde el último backup. Es especialmente útil para bases de datos, ya que permite realizar restauraciones precisas a puntos específicos en el tiempo, lo cual es crucial para sistemas que requieren alta disponibilidad y recuperación de datos ante eventos inesperados.
 
+## Resumen:
+- El Full Backup proporciona una copia completa de la Base de Datos y sirve de punto de inicio para restauraciones completas.
+- El Transaction Log Backup permite capturar los cambios y restaurar la Base de Datos a momentos específicos, ideal para escenarios de alta disponibilidad o recuperación de desastres o fallas.
+
+
 # Conclusión
 Los backups y la capacidad de restauración de datos son esenciales para cualquier sistema. Ya que es un plan de respaldo bien diseñado que asegura, en caso de desastres o fallos, recuperar la información sin grandes pérdidas de datos ni largos tiempos de inactividad. Las organizaciones deben implementar una estrategia de backup y restore adaptada a sus necesidades, incluyendo backups completos, incrementales y de logs, para maximizar la seguridad y minimizar el riesgo de pérdida de datos. Por último, comentar que, brinda una tranquilidad esencial para las operaciones y el cumplimiento normativo.
+Mediante los Backup completos y de logs de transacciones, fue posible restaurar la base de datos a ambos logs, garantizando precisión en la recuperación. Este proceso refuerza la importancia del modelo de recuperación Full y de respaldar periódicamente los logs para minimizar la pérdida de datos. En entornos reales, es recomendable implementar una estrategia de Backup regular y documentar los pasos, asegurando una restauración rápida y confiable.

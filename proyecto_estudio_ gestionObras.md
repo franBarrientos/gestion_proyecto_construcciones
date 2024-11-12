@@ -206,8 +206,7 @@ SQL Server permite crear usuarios específicos con permisos personalizados. Los 
 
 #### Ejemplo:
 
-sql
-Copiar código
+```sql
 CREATE LOGIN UsuarioAdmin WITH PASSWORD = 'Admin12!';
 CREATE USER UsuarioAdmin FOR LOGIN UsuarioAdmin;
 EXEC sp_addrolemember 'db_owner', 'UsuarioAdmin';
@@ -215,7 +214,7 @@ EXEC sp_addrolemember 'db_owner', 'UsuarioAdmin';
 CREATE LOGIN UsuarioLectura WITH PASSWORD = 'lectura123!';
 CREATE USER UsuarioLectura FOR LOGIN UsuarioLectura;
 EXEC sp_addrolemember 'db_datareader', 'UsuarioLectura'; 
-
+```
 
 Con estos permisos, el usuario de solo lectura podrá consultar datos, pero no insertarlos ni modificarlos.
 
@@ -224,11 +223,11 @@ SQL Server permite crear roles que agrupan permisos específicos. Estos roles fa
 
 #### Ejemplo:
 
-sql
-Copiar código
+```sql
 CREATE ROLE LecturaRol;
 GRANT SELECT ON Inspector TO LecturaRol;
 EXEC sp_addrolemember 'LecturaRol', 'UsuarioLectura';
+```
 
 Los usuarios dentro del rol LecturaRol pueden consultar la tabla "Inspector", pero no modificarla.
 

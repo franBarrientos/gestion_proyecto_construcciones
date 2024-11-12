@@ -304,17 +304,23 @@ En conclusión, es vital contar con estrategias de Backup y Restore para protege
 # CAPÍTULO III: METODOLOGÍA SEGUIDA 
 
 
- **a) Cómo se realizó el Trabajo Práctico**
-en desarrollo
- **b) Herramientas (Instrumentos y procedimientos)**
-1) ERD Plus: Es la herramienta con la que creamos y editamos los diagramas, permitiéndonos trabajar en equipo y en línea, facilitando también la forma de guardar y editar los cambios sobre los diagramas.
+ ##* *a) Cómo se realizó el Trabajo Práctico**
+### Elección del caso de estudio: Se eligió el Instituto Autárquico de Planeamiento y Vivienda (IAPV) como entidad principal, encargada de proyectos de construcción a empresas privadas en la provincia de Entre Ríos.
+### Diseño Conceptual y Modelo ER: El proyecto se basa en un modelo de base de datos relacional, representando entidades clave como Proyectos, Etapas, Inspectores, Empresas Constructoras, etc.
+### Desarrollo:
+- Permisos y roles de usuarios: El sistema asegura acceso controlado a diferentes tipos de usuarios según roles.
+- Funciones y Procedimientos Almacenados: Incluye funcionalidades para generar informes del estado de obras.
+- Índices y optimización: Se integraron índices para mejorar la eficiencia en consultas clave.
+- Triggers: Implementados para mantener consistencia en actualizaciones críticas de la base de datos.
+### Pruebas y Validación: La base de datos fue probada con inserciones y consultas controladas, incluyendo pruebas de integridad referencial y de restricción de unicidad para campos críticos.
+### Fase Final: Se realizo una revisión exhaustiva de la base de datos, verificando que cada componente (estructura, procedimientos, restricciones y documentación) El cual, según nuestro punto de vista, está completo. También realizamos la consolidación de toda la documentación para que esté clara y asequible, facilitando una futura gestión y mantenimiento de la base de datos.
 
+ ## **b) Herramientas (Instrumentos y procedimientos)**
+1) ERD Plus: Es la herramienta con la que creamos y editamos los diagramas, permitiéndonos trabajar en equipo y en línea, facilitando también la forma de guardar y editar los cambios sobre los diagramas.
+2) SQL Server: Con esta herramienta, se crearon las tablas, restricciones, índices y triggers que aseguran la integridad y eficiencia del sistema. Además, SQL Server permitió implementar procedimientos almacenados para generar reportes y automatizar tareas recurrentes, mejorando así el control de la información.
+3) Discord: Mediante de esta herramienta, se realizaron reuniones virtuales y discusiones en tiempo real, permitiendo a los integrantes compartir ideas, resolver dudas y coordinar tareas.
 
 # CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 
-
-
-
-
 
 ### Diagrama conceptual (opcional)
 
@@ -357,40 +363,20 @@ Acceso al documento [PDF](doc/DiccionarioDeDatos.pdf) del diccionario de datos.
 ![image](https://github.com/user-attachments/assets/1cf1d8af-ea8c-46ce-82b8-670b1eb7e882)
 
 
+# CAPÍTULO V: CONCLUSIONES
+Durante la fase de desarrollo, uno de los retos más importantes fue establecer conexiones complicadas entre las entidades. Para lograrlo, se diseñó un sistema claro y coherente que facilita la interacción entre las distintas partes en la construcción. Se pusieron en marcha medidas para evitar datos duplicados y mantener la coherencia de la información, como restricciones de unicidad y validaciones de integridad referencial.
 
+Establecer dependencias entre las entidades fue otro aspecto importante para garantizar que cualquier modificación en una parte del proyecto no tuviera repercusiones negativas en otras áreas. Se utilizaron procesos estándar y reglas estrictas para manejar la inserción, actualización y eliminación de datos, lo cual fue clave para el éxito del proyecto.
 
+Este enfoque asegura que la base de datos se pueda incorporar en todos los aspectos de los proyectos de construcción, facilitando a los involucrados tomar decisiones fundamentadas y seguir de cerca cada etapa de los proyectos.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Desarrollo TEMA 1 "----"
-
-en desarollo
-
-### Desarrollo TEMA 2 "----"
-
-en desarollo 
-
-
- CAPÍTULO V: CONCLUSIONES
-
-Las funciones permiten realizar cálculos simples o transformaciones que se integren en consultas ; a su vez cuando sea necesaria la devolución de datos, el uso de procedimientos
-almacenados es útil cuando se requiere de lógica un poco más compleja, la necesidad de manipular datos y ejecutar múltiples acciones.
+Las funciones de este proyecto permiten realizar cálculos simples o transformaciones que se integren en consultas ; a su vez cuando sea necesaria la devolución de datos, el uso de procedimientos almacenados es útil cuando se requiere de lógica un poco más compleja, la necesidad de manipular datos y ejecutar múltiples acciones.
 Es de mucha utilidad la realizacion  de procedimientos y funciones, debido a que ayudan al motor de base de datos a simplificar muchas tareas.
 
 
-
-
-## BIBLIOGRAFÍA DE CONSULTA
-(material de lectura/consulta que se utilizó para el desarrollo del trabajo)
+# BIBLIOGRAFÍA DE CONSULTA
+- The Entity-Relationship Model: Toward a Unified View of Data, publicado en 1976 en ACM Transactions on Database Systems, por P. P. Chen.
+- Aprende SQL, Universitat Jaume I, Castelló de la Plana, España, por G. Quintana (2014).
+- Documentación oficial de Microsoft sobre el lenguaje T-SQL y el operador LIKE, en Microsoft Learn.
+- Operador lógico SQL LIKE," disponible en SQL Shack, por R. Ortiz.
 

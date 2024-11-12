@@ -8,7 +8,8 @@ Estas técnicas protegen los datos y aseguran que puedan recuperarse con precisi
 
 # ¿Qué es un Backup y un Restore? Implementación
 
-## 1. **Backup:** Un backup es la creación de una copia de los datos en un momento específico. Esta copia puede ser utilizada para restaurar el sistema o la base de datos en caso de pérdida de datos, fallas en el hardware, errores del sistema o errores humanos. Existen diferentes tipos de backups, como el completo (full), el incremental y el diferencial, que se ajustan a distintas necesidades de protección y restauración.
+## 1. **Backup:** 
+Un backup es la creación de una copia de los datos en un momento específico. Esta copia puede ser utilizada para restaurar el sistema o la base de datos en caso de pérdida de datos, fallas en el hardware, errores del sistema o errores humanos. Existen diferentes tipos de backups, como el completo (full), el incremental y el diferencial, que se ajustan a distintas necesidades de protección y restauración.
 
 ### Ejemplo cambiar el Recovery a Full
 

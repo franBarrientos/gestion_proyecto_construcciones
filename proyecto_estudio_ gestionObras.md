@@ -3,15 +3,15 @@
 Acceso al documento [PDF](doc/proyecto_estudio_BaseDatos1.pdf) del diccionario de datos.
 
 **Estructura del documento principal:**
-PROYECTO SOBRE LA GESTION DE OBRAS DEL Instituto Autárquico de Planeamiento y Vivienda (IAPV) de la provincia de Entre Ríos
+- **PROYECTO SOBRE LA GESTION DE OBRAS DEL Instituto Autárquico de Planeamiento y Vivienda (IAPV) de la provincia de Entre Ríos**
 
 **Asignatura**: Bases de Datos I (FaCENA-UNNE)
 
 **Integrantes**:
-*Cabrera Romani, Lucas Ivan 43108457
-*Brollo Celso, Raul 42733217
-*Barrientos, Franco 45645852
-*Capay, Gabriel 41008590
+- Cabrera Romani, Lucas Ivan 43108457
+- Brollo, Celso Raul 42733217
+- Barrientos, Franco 45645852
+- Capay, Gabriel 41008590
 
 **Año**: 2024
 

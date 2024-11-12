@@ -42,7 +42,25 @@ Se estable como objetivo diseñar una base de datos que represente el caso de es
 ## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
  (Marco teórico. Acá se debe explicar brevemente los conceptos sobre los temas técnicos de los motores de bases de datos que se asignó a cada grupo)
 
-**TEMA 1 " ---- "** 
+TEMA 1: Optimización de consultas a través de índices 
+Optimización de consultas a través de índices
+
+En bases de datos los índices, son estructuras que aceleran la recuperación de datos al asociarse con tablas. Existen diversos tipos de índices:
+- Índice Clustered: Un índice clúster ordena y almacena las filas de datos de la tabla o vista por orden en función de la clave del índice clúster.
+- Índice NonClustered: Cada fila del índice no clúster contiene un valor de clave no agrupada y un localizador de fila. Este localizador apunta a la fila de datos del índice clúster o el montón que contiene el valor de clave.
+- Índice Hash: En un dice hash, se accede a los datos a través de una tabla hash en memoria. Los índices hash utilizan una cantidad fija de memoria, que es una función del número de cubos.
+- Índice Unique: Un índice único se asegura de que la clave de índice no contenga valores duplicados y, por tanto, cada fila de la tabla o vista sea en cierta forma única.
+- Columnstore Index: Almacena datos en columnas en lugar de filas, optimizando consultas analíticas de grandes volúmenes de datos.
+- Índice Filtrado: Permite indexar solo un subconjunto de datos mediante predicados, ideal para consultas de filtrado específico.
+- Índice Espacial: Optimiza consultas que involucran datos espaciales.
+Consideraciones al Usar Índices
+1.	Eficiencia en Consultas: Puede reducir el tiempo de búsqueda permitiendo que el optimizador de consultas acceda a los datos necesarios sin escanear toda la tabla.
+2.	Costo en Operaciones de Modificación: Instrucciones como INSERT, UPDATE, y DELETE requieren que los índices se actualicen lo cual consume recursos adicionales.
+3.	Selección de Columnas: Algunas columnas no pueden ser claves de índices, como aquellas de tipo text, ntext, y image.
+Evaluación y Ejemplo de Uso
+Se realizaron pruebas con diferentes configuraciones de índices para medir el impacto en el rendimiento del proyecto:
+- Un índice clustered en una columna de baja cardinalidad (pocos valores únicos) mostró un mejor rendimiento en consultas que uno en una columna de alta cardinalidad.
+- Un índice nonclustered mejoró el tiempo de respuesta, pero aumentó significativamente el espacio de almacenamiento.
 
 
 

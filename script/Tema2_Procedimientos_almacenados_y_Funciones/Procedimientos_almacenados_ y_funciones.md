@@ -84,7 +84,8 @@ RETURNS return_data_type
         function_body
         RETURN scalar_expression
     END
-[ ; ]```
+[ ; ]
+```
 
 # EJECUCION DE FUNCIONES
 

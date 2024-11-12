@@ -240,8 +240,32 @@ EXEC sp_addrolemember 'LecturaRol', 'UsuarioLectura';
 Los usuarios dentro del rol LecturaRol pueden consultar la tabla "Inspector", pero no modificarla.
 
 
-# CAPÍTULO III: METODOLOGÍA SEGUIDA 
+## TEMA 4: Backup y Restore. Backup en linea
 
+El proceso de Backup y Restore en bases de datos permite proteger y recuperar información en caso de fallos, pérdidas de datos, o desastres. Esto asegura que los datos críticos permanezcan disponibles y restaurables a un estado previo. La copia de seguridad crea un respaldo de la base de datos en un momento específico, mientras que el restore permite devolver la base de datos a ese punto de respaldo. Las organizaciones confían en los datos para tomar decisiones y operar eficientemente, por lo que cualquier pérdida de datos puede tener efectos negativos graves, tanto operativos como financieros.
+
+### Tipos de Backup
+1. Full Backup: Este es el tipo de backup más completo, ya que guarda toda la base de datos en su estado actual. Se recomienda como punto de inicio y debe realizarse de forma periódica para capturar el estado total de la base de datos.
+2. Transaction Log Backup: Registra todas las transacciones ocurridas desde el último Full Backup o Transaction Log Backup. Esto permite restaurar la base de datos a un momento específico. Es ideal para entornos críticos, ya que permite restauraciones a puntos exactos, minimizando la pérdida de datos.
+3. Backup en línea: Este tipo de respaldo se realiza mientras la base de datos está activa y en uso, sin interrumpir las operaciones. Es crucial para sistemas de alta disponibilidad que no pueden permitirse el lujo de detenerse para realizar un backup.
+
+### Configuración del Modelo de Recuperación
+Para que el Backup en línea y los Transaction Log Backups funcionen correctamente, es necesario ajustar el modelo de recuperación de la base de datos. En SQL Server, cambiar el modelo de recuperación a "Full" para habilitar respaldos más avanzados.
+
+#### Importancia:
+1. Protección ante pérdida de datos: Protege frente a fallos de hardware, ataques o errores humanos.
+2. Continuidad operativa: Permite restaurar rápidamente los datos para evitar tiempos de inactividad.
+3. Recuperación ante desastres: Facilita la restauración de datos después de situaciones extremas.
+4. Cumplimiento normativo: Asegura el cumplimiento de regulaciones legales relacionadas con el manejo de datos.
+
+#### Ventajas:
+1. Minimiza pérdidas de datos y reduce tiempos de inactividad.
+2. Protege contra errores humanos y asegura la integridad de los datos.
+3. Permite una recuperación precisa, especialmente con backups de logs de transacciones.
+
+En conclusión, es vital contar con estrategias de Backup y Restore para proteger y recuperar datos, garantizando la continuidad del negocio en caso de cualquier imprevisto.
+
+# CAPÍTULO III: METODOLOGÍA SEGUIDA 
 
 
  **a) Cómo se realizó el Trabajo Práctico**

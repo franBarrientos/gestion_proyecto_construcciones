@@ -94,20 +94,26 @@ Crear un procedimiento almacenado que ejecute una instrucción SELECT.
 
 #### Sintaxis
 
-CREATE [ OR ALTER ] { PROC | PROCEDURE }
-    [schema_name.] procedure_name [ ; number ]
-    [ { @parameter_name [ type_schema_name. ] data_type }
-        [ VARYING ] [ NULL ] [ = default ] [ OUT | OUTPUT | [READONLY]
-    ] [ ,...n ]
-[ WITH <procedure_option> [ ,...n ] ]
-[ FOR REPLICATION ]
-AS { [ BEGIN ] sql_statement [;] [ ...n ] [ END ] }
-[;]
+```sql
+CREATE [ OR ALTER ] { PROC | PROCEDURE } [schema_name.] procedure_name [ ; number ]
+    [ { @parameter_name [ type_schema_name. ] data_type } [ VARYING ] [ NULL ] [ = default ]
+    [ OUT | OUTPUT | [READONLY] ]
+    [ ,...n ]
+    [ WITH <procedure_option> [ ,...n ] ]
+    [ FOR REPLICATION ]
+AS
+    { [ BEGIN ]
+        sql_statement [;]
+        [ ...n ]
+      [ END ] 
+    }
+    [;]
 
-<procedure_option> ::=
+<procedure_option> ::= 
     [ ENCRYPTION ]
     [ RECOMPILE ]
     [ EXECUTE AS Clause ]
+```
 
 ### Explicación de algunos de sus argumentos
 CREATE: se usa para crear el procedimiento.
@@ -153,6 +159,7 @@ Funciones de tabla en línea: retornan una tabla
 
 #### Sintaxis
 
+```sql
 CREATE [ OR ALTER ] FUNCTION [ schema_name. ] function_name
 ( [ { @parameter_name [ AS ] [ type_schema_name. ] parameter_data_type [ NULL ]
  [ = default ] [ READONLY ] }
@@ -167,6 +174,7 @@ RETURNS return_data_type
         RETURN scalar_expression
     END
 [ ; ]
+```
 
 OR ALTER Altera condicionalmente la función sólo si ya existe.
 NOMBRE_ESQUEMA El nombre del esquema al que pertenece la función definida por el usuario.

@@ -107,7 +107,7 @@ CREATE TABLE Proyecto_Etapas
 CREATE TABLE Inspecciones
 (
   id_inspecciones INT  IDENTITY(1,1) NOT NULL,
-  fecha_inspeccion INT NOT NULL,
+  fecha_inspeccion DATE NOT NULL,
   estado_inspeccion VARCHAR(150) NOT NULL,
   id_inspector INT NOT NULL,
   nro_proyecto INT NOT NULL,

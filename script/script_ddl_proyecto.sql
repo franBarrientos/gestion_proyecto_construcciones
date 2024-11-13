@@ -41,7 +41,7 @@ CREATE TABLE Inspector
   nombre_inspector VARCHAR(200) NOT NULL,
   apellido_inspector VARCHAR(200) NOT NULL,
   dni_inspector INT NOT NULL,
-  telefono_inspector INT NOT NULL,
+  telefono_inspector VARCHAR(200 NOT NULL,
   correo_inspector VARCHAR(200) NOT NULL,
   CONSTRAINT PK_id_inspector PRIMARY KEY (id_inspector)
 );

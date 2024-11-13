@@ -62,7 +62,56 @@ Para llamar a un procedimiento almacenado utilizamos la palabra reservada call.
 3. Procedimientos almacenados temporales: los cuales pueden ser locales: comienzan con # y solo estan disponible en la sesion donde se crearon y luego estan los globales: comienzan con ## y estan disponibles para todas las sesiones.
 4. Procedimientos almacenados extendidos : permiten ejecutar programas que fueron generados en otros lenguajes de programacion, empiezan con el prefijo xp_. Actualmente no se los utiliza mucho debido a problemas que pueden generar en temas de seguridad.
 
-   
+# ALGUNOS PROCEDIMIENTOS DEFINIDOS
+
+ Procedimiento almacenado que permite el ingreso de datos de un inspector. Recibe parametros de entrada los datos del inspector: nombre,apellido,dni,telefono,correo, fecha_nacimiento y salario.
+ Luego de recibir los parametros permite cargar en la tabla.
+ ```
+CREATE PROCEDURE proc_AgregarInspector
+    @nombre_inspector VARCHAR(200),
+    @apellido_inspector VARCHAR(200),
+    @dni_inspector INT,
+    @telefono_inspector varchar(10),
+    @correo_inspector VARCHAR(200),
+    @fecha_nacimiento DATE,
+   @salario DECIMAL(10, 2)
+AS
+BEGIN
+    INSERT INTO Inspector (nombre_inspector, apellido_inspector, dni_inspector, telefono_inspector, correo_inspector, fecha_nacimiento, salario)
+    VALUES (@nombre_inspector, @apellido_inspector, @dni_inspector, @telefono_inspector, @correo_inspector, @fecha_nacimiento, @salario);
+END;
+```
+Para ejecutar este procedimiento requiere de la siguente instruccion:
+```EXEC proc_AgregarInspector 'pedro', 'Cabrera', 43108455, '3794028322', 'juan.perez@example.com', '1970-01-01', 3000.00;```
+
+Procedimiento con un Update:
+Permite modificar el salario de los inspectores que tienen una edad mayor a 50 años. Es un procedimiento sencillo con un bloque BEGIN END, que consulta la edad de todos los inspectores y aquellos que tengan una edad superior a 50 se le asigna un aumento de salario.
+```
+CREATE PROCEDURE proc_AumentarSalario
+AS
+BEGIN
+    UPDATE Inspector
+    SET salario = salario * 1.45
+    WHERE DATEDIFF(YEAR, fecha_nacimiento, GETDATE()) > 50;
+END;
+```
+Con esta instruccion se ejecuta la funcion aumento de salario
+```EXEC proc_AumentarSalario;```
+
+Procedimiento con un delete:
+permite eliminar aquellos inspectores que no se encuentran en la tabla inspecciones
+```
+CREATE PROCEDURE proc_EliminarInspectoresSinInspecciones
+AS
+BEGIN
+    DELETE FROM Inspector 
+    WHERE  not exists (SELECT null FROM Inspecciones s where s.id_inspector = id_inspector);
+END;
+ ```
+Para ejecutar este procedimiento se utiliza la siguiente instruccion:
+
+ ```EXEC proc_EliminarInspectoresSinInspecciones; ```
+
 # FUNCIONES
 
 # ¿QUE ES UNA FUNCION ALMACENADA?
@@ -114,6 +163,66 @@ Las funciones definidas por el usuario se almacenan en la siguiente carpeta de F
 2. Funciones de tabla con valores: Estas funciones en lugar de devolver un unico valor, permiten devolver una tabla.  Permiten devolver multiples valores, pero en forma de tabla. Permiten la utilizacion de bloque de codigo.
 3. Funciones escalares de fila: estas funciones realuzan calculos o transformaciones en cada fila de manera individual, algunas de ellas son SUBSTRING(),LEN(),GETDATE(),DATEDIFF(),etc.
 
+#FUNCIONES DEFINIDAS
+
+Funciones que permiten realizar algunos calculos sobre las tablas:
+
+Permite contar la cantidad de inspecciones con estado pendiente
+```
+CREATE FUNCTION ContarInspeccionesPendientes()
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT 
+        p.Nombre_proyecto,
+        COUNT(*) AS InspeccionesPendientes
+    FROM Inspecciones i
+    JOIN Proyectos p ON i.nro_proyecto = p.nro_proyecto
+    WHERE i.estado_inspeccion = 'Pendiente'
+    GROUP BY p.Nombre_proyecto
+);
+```
+Para ejecutar esta funcion se realiza mediante la siguiente sentencia
+```SELECT * FROM dbo.ContarInspeccionesPendientes();```
+
+Funcion que permite contar inspectores mayores de 30 años:
+```
+CREATE FUNCTION ContarInspectoresMayores30()
+RETURNS INT
+AS
+BEGIN
+    DECLARE @contar_may30 INT;
+
+    SELECT @contar_may30 = COUNT(*)
+    FROM Inspector
+    WHERE DATEDIFF(YEAR, fecha_nacimiento, GETDATE()) > 30;
+
+    RETURN @contar_may30;
+END;
+```
+
+Con esta instruccion podemos ejecutar la funcion
+```SELECT dbo.ContarInspectoresMayores30() as cantidad_mayores_30;```
+
+Funcion que permite contar inspectores con salarios superior
+```
+CREATE FUNCTION ContarInspectoresConSalarioSuperior()
+RETURNS INT
+AS
+BEGIN
+    DECLARE @contar_may30 INT;
+
+    SELECT @contar_may30 = COUNT(*)
+    FROM Inspector i
+    WHERE i.salario > 3000;
+
+    RETURN @contar_may30;
+END;
+```
+
+Para ejecutar la funcion se utiliza esta instruccion:
+```SELECT dbo.ContarInspectoresConSalarioSuperior() as Inspectores_con_salarioSuperior;```
 
 # CONCLUSION
 

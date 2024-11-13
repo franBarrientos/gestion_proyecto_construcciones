@@ -224,6 +224,50 @@ END;
 Para ejecutar la funcion se utiliza esta instruccion:
 ```SELECT dbo.ContarInspectoresConSalarioSuperior() as Inspectores_con_salarioSuperior;```
 
+# COMPARACION ENTRE FUNCIONES Y PROCEDIMINETOS CON UNA SENTENCIA DIRECTA:
+
+Comparacion entre un procedimiento y una sentencia 
+Los resultados de las consultas, tanto con el uso de una variable como con el procedimiento almacenado, no muestran una diferencia significativa en términos de rendimiento, ya que ambos enfoques tienen tiempos de ejecución y estadísticas de I/O muy similares. Esto sugiere que, en este caso específico, el uso de un procedimiento almacenado no introduce una mejora ni un deterioro notorio en el rendimiento comparado con una consulta directa.
+```
+SET STATISTICS TIME ON;		 
+SET STATISTICS IO ON;
+DECLARE @contar_may30 INT;
+  SELECT  @contar_may30 = COUNT(*)
+    FROM Inspector i
+    WHERE i.salario > 3000;
+
+
+SET STATISTICS TIME OFF;		 
+SET STATISTICS IO OFF;
+
+
+SET STATISTICS TIME ON;		 
+SET STATISTICS IO ON;
+SELECT dbo.ContarInspectoresConSalarioSuperior() as Inspectores_con_salarioSuperior;
+SET STATISTICS TIME OFF;		 
+SET STATISTICS IO OFF;
+```
+Comparacion entre una funcion y una sentencia 
+
+Los resultados obtenidos con las consultas UPDATE directas y el procedimiento almacenado proc_AumentarSalario muestran que no hay diferencias notables en cuanto al tiempo de ejecución ni en las estadísticas de I/O entre ambos enfoques. Esto sugiere que, en este caso, la ejecución directa de la consulta UPDATE y el uso del procedimiento almacenado tienen un rendimiento prácticamente idéntico, con tiempos de procesamiento y recursos utilizados muy similares.
+
+```
+SET STATISTICS TIME ON;		 
+SET STATISTICS IO ON;
+ UPDATE Inspector
+    SET salario = salario * 1.45
+    WHERE DATEDIFF(YEAR, fecha_nacimiento, GETDATE()) > 50;
+SET STATISTICS TIME OFF;		 
+SET STATISTICS IO OFF;
+
+
+
+SET STATISTICS TIME ON;		 
+SET STATISTICS IO ON;
+	EXEC proc_AumentarSalario;
+SET STATISTICS TIME OFF;		 
+SET STATISTICS IO OFF;
+```
 # CONCLUSION
 
 Un procedimiento almacenado es útil para realizar transformaciones de los datos en la estructura de la base de datos como actualizar, eliminar o insertar. Mientras que en una función es más adecuada utilizarla cuando queremos realizar cálculos, validaciones o transformaciones dentro de una consulta sin poder realizar modificaciones en la estructura de la base de datos.

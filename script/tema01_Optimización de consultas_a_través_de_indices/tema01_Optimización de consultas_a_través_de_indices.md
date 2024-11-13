@@ -94,7 +94,7 @@ el plan de ejecución
 #### Script para la creación del índice:
 ```sql
     CREATE CLUSTERED INDEX [IX_fecha_inspeccion]
-    ON [dbo].[Inspecciones] ([fecha_inspeccion],[estado_inspeccion])
+    ON [dbo].[Inspecciones] ([fecha_inspeccion])
 ```
 
 #### Script de la consulta a estudiar:

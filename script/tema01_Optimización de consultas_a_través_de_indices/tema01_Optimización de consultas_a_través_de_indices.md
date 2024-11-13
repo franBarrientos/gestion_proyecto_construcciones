@@ -178,6 +178,7 @@ es decir, la que tenga menor variaciones de valores.
 ```sql
     CREATE NONCLUSTERED INDEX [IX_fecha_inspeccion]
     ON [dbo].[Inspecciones] ([estado_inspeccion],[fecha_inspeccion])
+    WHERE estado_inspeccion = 'Aprobada'
 ```
 
 ![image](https://github.com/user-attachments/assets/e898eac7-ead9-4fb6-a36c-566cf0fe8a8b)
